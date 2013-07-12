@@ -1,44 +1,69 @@
-* {
-  margin: 0;
-  padding: 0;
+* {margin: 0;padding: 0;}
+html {height: 100%;}
+header, nav, section, article, aside, footer {display: block;}
+body {font: 12px/18px Arial, Tahoma, Verdana, sans-serif;width: 100%;height: 100%;}
+a {color: blue;outline: none;text-decoration: underline;}
+a:hover {text-decoration: none;}
+p {margin: 0 0 18px}
+img {border: none;}
+input {vertical-align: middle;}
+input[type=submit]::-moz-focus-inner { padding:0; border:0; } // Для корректного отображение инпутов в FF
+.clear {clear:both;}
+
+/* SETUP AND DEFAULT CSS
+-----------------------------------------------------------------------------*/
+@width:     100%; // ширина сайта
+@min-width: 960px; // минимальная ширина сайта
+@max-width: 1200px; // максимальная ширина сайта
+@header:    150px; // выоста шапки
+@footer:    100px; // высота футера
+
+// LESS setup
+.rounded-corners (@radius: 5px) {
+  -webkit-border-radius:  @radius;
+  -moz-border-radius:     @radius;
+  -ms-border-radius:      @radius;
+  -o-border-radius:       @radius;
+  -khtml-border-radius:   @radius;
+  border-radius:          @radius;
 }
-html {
-  height: 100%;
+.shadow (@shadow-param: 0 2px 5px, @shadow-color: #b2b2b2) {
+  -moz-box-shadow:    @shadow-param @shadow-color;
+  -webkit-box-shadow: @shadow-param @shadow-color;
+  -ms-box-shadow:     @shadow-param @shadow-color;
+  -o-box-shadow:      @shadow-param @shadow-color;
+  -khtml-box-shadow:  @shadow-param @shadow-color;
+  box-shadow:         @shadow-param @shadow-color;
 }
-header, nav, section, article, aside, footer {
-  display: block;
+.text-shadow (@text-shadow-param: 0 2px 5px, @text-shadow-color: #b2b2b2) {
+  text-shadow: 1px 1px #fff;
 }
-body {
-  font: 12px/18px Arial, Tahoma, Verdana, sans-serif;
-  width: 100%;
-  height: 100%;
+.gradient (@first-color, @second-color) {
+  background-color:@first-color;
+  background-image:-webkit-gradient(linear,left bottom,left top,color-stop(0.32,@first-color),color-stop(0.83,@second-color));
+  background-image:-webkit-linear-gradient(@first-color, @second-color);
+  background-image:-moz-linear-gradient(top,@first-color, @second-color);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@first-color', endColorstr='@second-color');
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='@first-color', endColorstr='@second-color')";
+  background-image: -ms-linear-gradient(@first-color, @second-color);
+  background-image: -o-linear-gradient(@first-color, @second-color);
+  background-image: linear-gradient(@first-color, @second-color);
 }
-a {
-  color: blue;
-  outline: none;
-  text-decoration: underline;
+// Поддержка CSS3 в IE
+.ie {
+  behavior: url("PIE.htc");
 }
-a:hover {
-  text-decoration: none;
-}
-p {
-  margin: 0 0 18px
-}
-img {
-  border: none;
-}
-input {
-  vertical-align: middle;
-}
+/* END SETUP
+-----------------------------------------------------------------------------*/
 #wrapper {
-  width: 1000px;
+  width: @width;
+  min-width: @min-width;
+  max-width: @max-width;
   margin: 0 auto;
   min-height: 100%;
   height: auto !important;
   height: 100%;
 }
-
-
 /* Header
 -----------------------------------------------------------------------------*/
 #header {
@@ -48,14 +73,16 @@ input {
 /* Middle
 -----------------------------------------------------------------------------*/
 #content {
-  padding: 0 0 100px;
+  padding: 0 0 @footer+20px;
 }
 /* Footer
 -----------------------------------------------------------------------------*/
 #footer {
-  width: 1000px;
-  margin: -100px auto 0;
-  height: 100px;
+  width: @width;
+  min-width: @min-width;
+  max-width: @max-width;
+  margin: -@footer auto 0;
+  height: @footer;
   background: #BFF08E;
   position: relative;
 }
