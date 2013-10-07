@@ -7,6 +7,7 @@ a:hover {text-decoration: none;}
 p {margin: 0 0 18px}
 img {border: none;}
 input {vertical-align: middle;}
+table {border-collapse: collapse}
 input[type=submit]::-moz-focus-inner { padding:0; border:0; } // Для корректного отображение инпутов в FF
 .clear {clear:both;}
 
@@ -36,18 +37,16 @@ input[type=submit]::-moz-focus-inner { padding:0; border:0; } // Для корр
   box-shadow:         @shadow-param @shadow-color;
 }
 .text-shadow (@text-shadow-param: 0 2px 5px, @text-shadow-color: #b2b2b2) {
-  text-shadow: 1px 1px #fff;
+  text-shadow: @text-shadow-param @text-shadow-color;
 }
 .gradient (@first-color, @second-color) {
-  background-color:@first-color;
-  background-image:-webkit-gradient(linear,left bottom,left top,color-stop(0.32,@first-color),color-stop(0.83,@second-color));
-  background-image:-webkit-linear-gradient(@first-color, @second-color);
-  background-image:-moz-linear-gradient(top,@first-color, @second-color);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@first-color', endColorstr='@second-color');
-  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='@first-color', endColorstr='@second-color')";
-  background-image: -ms-linear-gradient(@first-color, @second-color);
-  background-image: -o-linear-gradient(@first-color, @second-color);
-  background-image: linear-gradient(@first-color, @second-color);
+  background: @first-color;
+  background-image: -moz-linear-gradient(top, @first-color, @second-color);
+  background-image: -ms-linear-gradient(top, @first-color, @second-color);
+  background-image: -o-linear-gradient(top, @first-color, @second-color);
+  background-image: -webkit-gradient(linear, center top, center bottom, from(@first-color), to(@second-color));
+  background-image: -webkit-linear-gradient(top, @first-color, @second-color);
+  background-image: linear-gradient(top, @first-color, @second-color);
 }
 // Поддержка CSS3 в IE
 .ie {
