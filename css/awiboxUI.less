@@ -30,6 +30,45 @@
   background-image: linear-gradient(top, @first-color, @second-color);
 }
 
-
-
-
+/* -----------------------------------------------------------------
+                              Carcas
+----------------------------------------------------------------- */
+.clear {
+  clear: both;
+}
+.section {
+  width: 100%; /* 12 колонок */
+}
+.section:after {
+  clear: both;
+  line-height: 0;
+  display: block;
+  content: "";
+}
+//.w1,.w2,.w3,.w4,.w5,.w6,.w7,.w8,.w9,.w10,.w11,.w12 {
+[class*="w"] {
+  float: left;
+  min-height: 20px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin-left: 2%;
+}
+[class*="w"]:first-child {
+  margin-left: 0;
+}
+[class*="w"] + [class*="w"] {
+  margin-left: 2%;
+}
+.w1 {width: 8.5%-2%;}
+.w2 {width: 8.5%*2-2%;}
+.w3 {width: 8.5%*3-2%;}
+.w4 {width: 8.5%*4-2%;}
+.w5 {width: 8.5%*5-2%;}
+.w6 {width: 8.5%*6-2%;}
+.w7 {width: 8.5%*7-2%;}
+.w8 {width: 8.5%*8-2%;}
+.w9 {width: 8.5%*9-2%;}
+.w10 {width: 8.5%*10-2%;}
+.w11 {width: 8.5%*11-2%;}
+.w12 {width: 8.5%*12-2%;}
