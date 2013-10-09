@@ -21,7 +21,7 @@
       </option>
       <option name="outputFromStdout" value="true" />
       <option name="passParentEnvs" value="true" />
-      <option name="program" value="C:\fleetnews\html\css\style.less" />
+      <option name="program" value="C:/fleetnews/html/css/style.less" />
       <option name="scopeName" value="Project Files" />
       <option name="trackOnlyRoot" value="false" />
       <option name="workingDir" value="$FileDir$" />
