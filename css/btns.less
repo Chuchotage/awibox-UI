@@ -1,8 +1,9 @@
 @btnDefault:#555;
 @btnBlue:#2d89f0;
+@btnBlueDark:#0a59c2;
 @btnGreen:#009216;
-@btnYellow:#ffbc1d;
-@btnOrange:#db562e;
+@btnOrange:#f6ad1a;
+@btnRed:#ff0000;
 @btnDefaultColor:#fff;
 
 .btn {
@@ -13,7 +14,8 @@
   font-size: 14px;
   background-color: @btnDefault;
   color: @btnDefaultColor;
-  cursor: pointer
+  cursor: pointer;
+  border:1px solid @btnDefault;
 }
 .btn:hover {
   background: @btnDefault*1.2;
@@ -24,29 +26,45 @@
 }
 
 .btn-blue {
-  background: @btnBlue
+  background: @btnBlue;
+  border:1px solid @btnBlue;
 }
 .btn-blue:hover {
   background: @btnBlue*1.2;
 }
 
+.btn-blue-dark {
+  background: @btnBlueDark;
+  border:1px solid @btnBlueDark;
+}
+.btn-blue-dark:hover {
+  background: @btnBlueDark*1.2;
+}
+
 .btn-green {
   background: @btnGreen;
+  border:1px solid @btnGreen;
 }
 .btn-green:hover {
   background: @btnGreen*1.2;
 }
 
 .btn-yellow {
-  background: @btnYellow;
+  background: @btnOrange;
+  border:1px solid @btnOrange;
 }
 .btn-yellow:hover {
-  background: @btnYellow*1.1;
+  background: @btnOrange*1.1;
+}
+.btn-yellow:active, .btn-yellow.active {
+  -webkit-box-shadow: inset 0 3px 5px @btnOrange;;
+  box-shadow: inset 0 3px 5px @btnOrange;;
 }
 
-.btn-orange {
-  background: @btnOrange;
+.btn-red {
+  background: @btnRed;
+  border:1px solid @btnRed;
 }
-.btn-orange:hover {
-  background: @btnOrange*1.1;
+.btn-red:hover {
+  background: #ff4a13;
 }
