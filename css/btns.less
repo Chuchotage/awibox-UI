@@ -1,6 +1,8 @@
 @btnDefault:#555;
 @btnBlue:#2d89f0;
 @btnGreen:#009216;
+@btnYellow:#ffbc1d;
+@btnOrange:#db562e;
 @btnDefaultColor:#fff;
 
 .btn {
@@ -13,35 +15,38 @@
   color: @btnDefaultColor;
   cursor: pointer
 }
-
 .btn:hover {
   background: @btnDefault*1.2;
 }
-
 .btn:active, .btn.active {
-  background: @btnDefault/1.2;
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }
 
 .btn-blue {
   background: @btnBlue
 }
-
 .btn-blue:hover {
   background: @btnBlue*1.2;
-}
-
-.btn-blue:active, .btn-blue.active {
-  background: @btnBlue/1.2;
 }
 
 .btn-green {
   background: @btnGreen;
 }
-
 .btn-green:hover {
   background: @btnGreen*1.2;
 }
 
-.btn-green:active, .btn-green.active {
-  background: @btnGreen/1.2;
+.btn-yellow {
+  background: @btnYellow;
+}
+.btn-yellow:hover {
+  background: @btnYellow*1.1;
+}
+
+.btn-orange {
+  background: @btnOrange;
+}
+.btn-orange:hover {
+  background: @btnOrange*1.1;
 }
